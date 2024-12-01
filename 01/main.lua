@@ -1,7 +1,6 @@
 local input = "C:\\Users\\Nightmare\\Desktop\\AdventOfCode\\01\\input.txt"
 local file = io.open(input, "r")
 
-
 function getSource()
     local buffer = {}
     if file then
@@ -53,7 +52,6 @@ function TableSum(input)
     return result
 end
 
-
 function checkDuplicates(list)
     local seen = {}
     for _, value in ipairs(list) do
@@ -64,6 +62,7 @@ function checkDuplicates(list)
     end
     return false
 end
+
 function TableFind(table, value)
     local count = 0
     for _, v in ipairs(table) do
@@ -75,7 +74,7 @@ function TableFind(table, value)
 end
 
 function main()
-    local sortedTable =     sort(RowsToTable(getSource()))
+    local sortedTable = sort(RowsToTable(getSource()))
     print("part1: ")
     print(
     TableSum(
@@ -87,8 +86,6 @@ function main()
         table.insert(buffer,TableFind(sortedTable[2],v)*v)
     end
     print(TableSum(buffer))
-
 end
-
 
 main()
