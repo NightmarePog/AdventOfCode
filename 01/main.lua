@@ -1,4 +1,4 @@
-local input = "C:\\Users\\Nightmare\\Desktop\\AdventOfCode\\01\\input.txt"
+local input = "/home/Nightmare/GitHub/AdventOfCode/01/input.txt"
 local file = io.open(input, "r")
 
 function getSource()
