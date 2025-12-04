@@ -1,7 +1,7 @@
-use crate::utils::input_http;
+use crate::utils::input_aoc;
 
 pub async fn init() {
-    let input = input_http::get(1).await.unwrap();
+    let input = parse(&input_aoc::get_http(1).await.unwrap());
     process(input);
 }
 
@@ -39,6 +39,10 @@ impl Dial {
         }
         click
     }
+}
+
+fn parse(input: &str) -> Vec<String> {
+    input.lines().map(|line| line.to_string()).collect()
 }
 
 fn process(moves: Vec<String>) {
